@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Pybozocrack by ikkebr</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Pybozocrack</h1>
+        <p>A silly &amp; effective MD5 cracker in Python</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/ikkebr/PyBozoCrack" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/ikkebr/PyBozoCrack/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/ikkebr/PyBozoCrack/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>
+<a name="bozocrack" class="anchor" href="#bozocrack"><span class="octicon octicon-link"></span></a>BozoCrack</h1>
+
+<p>BozoCrack is a depressingly effective MD5 password hash cracker with almost zero CPU/GPU load. Instead of rainbow tables, dictionaries, or brute force, BozoCrack simply <em>finds</em> the plaintext password. Specifically, it googles the MD5 hash and hopes the plaintext appears somewhere on the first page of results.</p>
+
+<p>It works way better than it ever should.</p>
+
+<h2>
+<a name="how" class="anchor" href="#how"><span class="octicon octicon-link"></span></a>How?</h2>
+
+<p>Basic usage:</p>
+
+<pre><code>$ python bozocrack.py -f my_md5_hashes.txt
+</code></pre>
+
+<p>Or:</p>
+
+<pre><code>$ python bozocrack.py -s fcf1eed8596699624167416a1e7e122e
+</code></pre>
+
+<p>The input file has no specified format. BozoCrack automatically picks up strings that look like MD5 hashes. A single line shouldn't contain more than one hash.</p>
+
+<p>Example with output:</p>
+
+<pre><code>$ python bozocrack.py -f example.txt
+Loaded 5 unique hashes
+fcf1eed8596699624167416a1e7e122e:octopus
+bed128365216c019988915ed3add75fb:passw0rd
+d0763edaa9d9bd2a9516280e9044d885:monkey
+dfd8c10c1b9b58c8bf102225ae3be9eb:12081977
+ede6b50e7b5826fe48fc1f0fe772c48f:1q2w3e4r5t6y
+
+$ python bozocrack.py -s fcf1eed8596699624167416a1e7e122e
+fcf1eed8596699624167416a1e7e122e:octopus
+</code></pre>
+
+<h2>
+<a name="why" class="anchor" href="#why"><span class="octicon octicon-link"></span></a>Why?</h2>
+
+<p>To show just how bad an idea it is to use plain MD5 as a password hashing mechanism. Honestly, if the passwords can be cracked with <em>this software</em>, there are no excuses.</p>
+
+<h2>
+<a name="who" class="anchor" href="#who"><span class="octicon octicon-link"></span></a>Who?</h2>
+
+<p>BozoCrack was originally written by <a href="http://twitter.com/juusosalonen">Juuso Salonen</a>, the guy behind <a href="http://radiosilenceapp.com">Radio Silence</a> and <a href="http://radiosilenceapp.com/private-eye">Private Eye</a>. BozoCrack was rewritten in Python by <a href="http://twitter.com/ikkebr">Henrique Pereira</a>.</p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Do whatever you wish. Public domain, yadda yadda.</p>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/ikkebr">ikkebr</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
