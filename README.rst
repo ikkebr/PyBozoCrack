@@ -18,9 +18,8 @@ PyBozoCrack
 PyBozoCrack is a depressingly effective MD5 password hash cracker with almost zero CPU/GPU load written in Python. Instead of rainbow tables, dictionaries, or brute force, PyBozoCrack simply *finds* the plaintext password. Specifically, it googles the MD5 hash and hopes the plaintext appears somewhere on the first page of results.
 
 * Free software: BSD license
-* Documentation: http://pybozocrack.rtfd.org.
 
-It works way better than it ever should.
+It works way better than it ever should. Go ahead and try.
 
 
 How?
