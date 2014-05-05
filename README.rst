@@ -2,16 +2,16 @@
 PyBozoCrack
 ===============================
 
-.. image:: https://badge.fury.io/py/pybozocrack.png
+.. image:: https://badge.fury.io/py/pybozocrack.png?123
    :target: http://badge.fury.io/py/pybozocrack
     
-.. image:: https://travis-ci.org/ikkebr/PyBozoCrack.svg
+.. image:: https://travis-ci.org/ikkebr/PyBozoCrack.svg?123
    :target: https://travis-ci.org/ikkebr/PyBozoCrack
    
-.. image:: https://coveralls.io/repos/ikkebr/PyBozoCrack/badge.png 
+.. image:: https://coveralls.io/repos/ikkebr/PyBozoCrack/badge.png?123
    :target: https://coveralls.io/r/ikkebr/PyBozoCrack
 
-.. image:: https://pypip.in/d/pybozocrack/badge.png
+.. image:: https://pypip.in/d/pybozocrack/badge.png?123
    :target: https://pypi.python.org/pypi/pybozocrack
 
 
