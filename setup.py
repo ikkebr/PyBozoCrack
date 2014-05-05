@@ -19,17 +19,13 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 setup(
     name='pybozocrack',
-    version='1.0.2',
+    version='1.2',
     description='PyBozoCrack is a depressingly effective MD5 password hash cracker with almost zero CPU/GPU load.',
     long_description=readme + '\n\n' + history,
     author='Henrique Pereira',
     author_email='ikkibr@gmail.com',
     url='https://github.com/ikkebr/pybozocrack',
-    packages=[
-        'pybozocrack',
-    ],
-    package_dir={'pybozocrack':
-                 'pybozocrack'},
+    py_modules = ['pybozocrack'],
     include_package_data=True,
     install_requires=[
     ],
@@ -45,4 +41,4 @@ setup(
         'Programming Language :: Python :: 2.7',
     ],
     test_suite='tests',
-)
+    entry_points={'console_scripts': ['pybozocrack = pybozocrack:main']},)

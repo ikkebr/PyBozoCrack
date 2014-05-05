@@ -76,8 +76,8 @@ class BozoCrack(object):
         with open(filename, 'a+') as c:
             c.write(format_it(hash=h, plaintext=plaintext)+"\n")
 
-if __name__ == '__main__': # pragma: no cover
 
+def main():
     parser = OptionParser()
     parser.add_option('-s', '--single', metavar='MD5HASH',
                       help='cracks a single hash', dest='single', default=False)
@@ -95,3 +95,6 @@ if __name__ == '__main__': # pragma: no cover
             print format_it(hash=options.single, plaintext=plaintext)
     else:
         BozoCrack(options.target).crack()
+
+if __name__ == '__main__': # pragma: no cover
+    main()

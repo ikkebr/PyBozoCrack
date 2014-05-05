@@ -10,7 +10,7 @@ Tests for `pybozocrack` module.
 
 import unittest
 
-from pybozocrack import pybozocrack
+import pybozocrack
 
 
 class TestPybozocrack(unittest.TestCase):
