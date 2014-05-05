@@ -77,7 +77,7 @@ class BozoCrack(object):
             c.write(format_it(hash=h, plaintext=plaintext)+"\n")
 
 
-def main():
+def main(): # pragma: no cover
     parser = OptionParser()
     parser.add_option('-s', '--single', metavar='MD5HASH',
                       help='cracks a single hash', dest='single', default=False)
