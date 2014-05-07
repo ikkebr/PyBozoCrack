@@ -30,7 +30,7 @@ def crack_single_hash(h):
         "http://www.google.com/search?q={hash}".format(hash=h))
 
     wordlist = response.read().replace('.', ' ').replace(
-        ':', ' ').replace('?', '').split(' ')
+        ':', ' ').replace('?', '').replace("('", ' ').replace("'", ' ').split(' ')
     plaintext = dictionary_attack(h, set(wordlist))
 
     return plaintext
