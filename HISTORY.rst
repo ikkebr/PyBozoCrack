@@ -2,6 +2,11 @@
 
 History
 -------
+1.2.1 (2014-05-07)
+++++++++++++++++++
+
+* Cracked hashes are now stored
+* Error message if no cracked hashes are found
 
 1.2.1 (2014-05-07)
 ++++++++++++++++++
