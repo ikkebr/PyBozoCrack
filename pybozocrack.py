@@ -52,9 +52,11 @@ class BozoCrack(object):
         self.cache = self.load_cache()
 
     def crack(self):
+        cracked_hashes = []
         for h in self.hashes:
             if h in self.cache:
                 print format_it(h, self.cache[h])
+                cracked_hashes.append( (h, self.cache[h]) )
                 continue
 
             plaintext = crack_single_hash(h)
@@ -63,6 +65,9 @@ class BozoCrack(object):
                 print format_it(h, plaintext)
                 self.cache[h] = plaintext
                 self.append_to_cache(h, plaintext)
+                cracked_hashes.append( (h, plaintext) )
+
+        return cracked_hashes
 
     def load_cache(self, filename='cache'):
         cache = {}
@@ -94,7 +99,9 @@ def main(): # pragma: no cover
         if plaintext:
             print format_it(hash=options.single, plaintext=plaintext)
     else:
-        BozoCrack(options.target).crack()
+        cracked = BozoCrack(options.target).crack()
+        if not cracked:
+            print "No hashes were cracked."
 
 if __name__ == '__main__': # pragma: no cover
     main()

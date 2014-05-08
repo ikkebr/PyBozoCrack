@@ -42,8 +42,9 @@ class TestPybozocrack(unittest.TestCase):
 		
     def test_crack(self):
         self.cracker.hashes = [self.hash,]
-        self.cracker.crack()
+        result = self.cracker.crack()
         self.assertEqual( self.cracker.cache[self.cracker.hashes[0]], self.plaintext )
+        self.assertEqual( len(result), 1)
         
     def test_dictionary_attack_known_hash(self):
         self.assertEqual(pybozocrack.dictionary_attack(self.hash, ['zebra', '123', self.plaintext]), self.plaintext)
