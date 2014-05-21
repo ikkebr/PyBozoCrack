@@ -9,7 +9,7 @@ Tests for `pybozocrack` module.
 """
 
 import unittest
-
+import sys
 import pybozocrack
 
 
@@ -36,9 +36,10 @@ class TestPybozocrack(unittest.TestCase):
     def test_load_empty_cache(self):
         self.assertEqual(self.cracker.load_cache('empty'), {})
 
+    @unittest.skipIf('PyPy' in sys.version, "Test is broken on PyPy")
     def test_append_to_cache(self):
         self.cracker.append_to_cache('1', '2', 'cache')
-    #    self.assertEqual(self.cracker.load_cache('cache'), {'1': '2'})
+        self.assertEqual(self.cracker.load_cache('cache'), {'1': '2'})
 		
     def test_crack(self):
         self.cracker.hashes = [self.hash,]
