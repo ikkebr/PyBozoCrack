@@ -1,5 +1,5 @@
 ===============================
-PyBozoCrack
+PyBozoCrack 3
 ===============================
 
 .. image:: https://badge.fury.io/py/pybozocrack.png?123
@@ -15,7 +15,7 @@ PyBozoCrack
    :target: https://pypi.python.org/pypi/pybozocrack
 
 
-PyBozoCrack is a depressingly effective MD5 password hash cracker with almost zero CPU/GPU load written in Python. Instead of rainbow tables, dictionaries, or brute force, PyBozoCrack simply *finds* the plaintext password. Specifically, it googles the MD5 hash and hopes the plaintext appears somewhere on the first page of results.
+PyBozoCrack 3 is a depressingly effective MD5 password hash cracker with almost zero CPU/GPU load written in Python 3. Instead of rainbow tables, dictionaries, or brute force, PyBozoCrack simply *finds* the plaintext password. Specifically, it googles the MD5 hash and hopes the plaintext appears somewhere on the first page of results.
 
 * Free software: BSD license
 
@@ -67,4 +67,4 @@ Who?
 ----
 BozoCrack was originally written by Juuso Salonen (http://twitter.com/juusosalonen).
 
-PyBozoCrack was rewritten in Python by Henrique Pereira (http://twitter.com/ikkebr).
+PyBozoCrack was rewritten in Python by Henrique Pereira (http://ikke.top).
