@@ -2,6 +2,10 @@
 
 History
 -------
+3.0.2 (2021-01-16)
+++++++++++++++++++++
+* Standalone script should work now
+
 3.0.1 (2021-01-16)
 ++++++++++++++++++++
 * Removed universal wheel
