@@ -1,23 +1,16 @@
 #!/usr/bin/env python
 import hashlib
 import re
-from urllib import FancyURLopener
-import sys
+import urllib.request
 from optparse import OptionParser
 
 HASH_REGEX = re.compile("([a-fA-F0-9]{32})")
 
 
-class MyOpener(FancyURLopener):
-    version = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; it; rv:1.8.1.11) Gecko/20071127 Firefox/2.0.0.11'
-
-
 def dictionary_attack(h, wordlist):
     for word in wordlist:
-        if hashlib.md5(word).hexdigest() == h:
+        if hashlib.md5(word.encode('utf-8')).hexdigest() == h:
             return word
-
-    return None
 
 
 def format_it(hash, plaintext):
@@ -25,12 +18,19 @@ def format_it(hash, plaintext):
 
 
 def crack_single_hash(h):
-    myopener = MyOpener()
-    response = myopener.open(
+    my_opener = urllib.request.build_opener()
+    my_opener.addheaders = [('User-agent', 'Mozilla/5.0 (Windows; U; Windows'
+                             ' NT 5.1; it; rv:1.8.1.11) '
+                             ' Gecko/20071127 Firefox/2.0.0.11')]
+
+    response = my_opener.open(
         "http://www.google.com/search?q={hash}".format(hash=h))
 
-    wordlist = response.read().replace('.', ' ').replace(
-        ':', ' ').replace('?', '').replace("('", ' ').replace("'", ' ').split(' ')
+    wordlist = response.read().decode('utf-8').replace(
+        '.', ' ').replace(':', ' ').replace(
+            '?', '').replace("('", ' ').replace(
+                "'", ' ').split(' ')
+
     plaintext = dictionary_attack(h, set(wordlist))
 
     return plaintext
@@ -47,7 +47,7 @@ class BozoCrack(object):
 
         self.hashes = sorted(set(hashes))
 
-        print "Loaded {count} unique hashes".format(count=len(self.hashes))
+        print("Loaded {count} unique hashes".format(count=len(self.hashes)))
 
         self.cache = self.load_cache()
 
@@ -55,23 +55,23 @@ class BozoCrack(object):
         cracked_hashes = []
         for h in self.hashes:
             if h in self.cache:
-                print format_it(h, self.cache[h])
-                cracked_hashes.append( (h, self.cache[h]) )
+                print(format_it(h, self.cache[h]))
+                cracked_hashes.append((h, self.cache[h]))
                 continue
 
             plaintext = crack_single_hash(h)
 
             if plaintext:
-                print format_it(h, plaintext)
+                print(format_it(h, plaintext))
                 self.cache[h] = plaintext
                 self.append_to_cache(h, plaintext)
-                cracked_hashes.append( (h, plaintext) )
+                cracked_hashes.append((h, plaintext))
 
         return cracked_hashes
 
     def load_cache(self, filename='cache'):
         cache = {}
-        with open(filename, 'a+') as c:
+        with open(filename, 'r') as c:
             for line in c:
                 hash, plaintext = line.replace('\n', '').split(':', 1)
                 cache[hash] = plaintext
@@ -82,14 +82,14 @@ class BozoCrack(object):
             c.write(format_it(hash=h, plaintext=plaintext)+"\n")
 
 
-def main(): # pragma: no cover
+def main():  # pragma: no cover
     parser = OptionParser()
     parser.add_option('-s', '--single', metavar='MD5HASH',
-                      help='cracks a single hash', dest='single', default=False)
+                      help='crack a single hash', dest='single', default=False)
     parser.add_option('-f', '--file', metavar='HASHFILE',
-                      help='cracks multiple hashes on a file', dest='target',)
+                      help='crack multiple hashes on a file', dest='target',)
 
-    options, args = parser.parse_args()
+    options, _ = parser.parse_args()
 
     if not options.single and not options.target:
         parser.error("please select -s or -f")
@@ -97,11 +97,12 @@ def main(): # pragma: no cover
         plaintext = crack_single_hash(options.single)
 
         if plaintext:
-            print format_it(hash=options.single, plaintext=plaintext)
+            print(format_it(hash=options.single, plaintext=plaintext))
     else:
         cracked = BozoCrack(options.target).crack()
         if not cracked:
-            print "No hashes were cracked."
+            print("No hashes were cracked.")
 
-if __name__ == '__main__': # pragma: no cover
+
+if __name__ == '__main__':  # pragma: no cover
     main()

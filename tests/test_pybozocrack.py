@@ -19,13 +19,13 @@ class TestPybozocrack(unittest.TestCase):
         self.hash = "d0763edaa9d9bd2a9516280e9044d885"
         self.plaintext = "monkey"
 
-        file = open('test', 'w')
-        file.write('fcf1eed8596699624167416a1e7e122e\nbed128365216c019988915ed3add75fb')
-        file.close()
+        with open('test', 'w') as file:
+            file.write('fcf1eed8596699624167416a1e7e122e\nbed128365216c019988915ed3add75fb')
+            file.close()
 		
-        file = open('cache', 'w')
-        file.write('1:2\n')
-        file.close()
+        with open('cache', 'w') as file:
+            file.write('1:2\n')
+            file.close()
 
         self.cracker = pybozocrack.BozoCrack('test')
 
