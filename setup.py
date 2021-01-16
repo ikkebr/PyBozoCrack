@@ -19,7 +19,7 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 setup(
     name='pybozocrack',
-    version='1.2.2.3',
+    version='3.0',
     description='PyBozoCrack is a depressingly effective MD5 password hash cracker with almost zero CPU/GPU load.',
     long_description=readme + '\n\n' + history,
     author='Henrique Pereira',
@@ -33,12 +33,15 @@ setup(
     zip_safe=False,
     keywords='pybozocrack',
     classifiers=[
-		'Development Status :: 4 - Beta',
+		'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Natural Language :: English',
-        "Programming Language :: Python :: 2",
-        'Programming Language :: Python :: 2.7',
+        "Programming Language :: Python :: 3 :: Only",
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9'
     ],
     test_suite='tests',
     entry_points={'console_scripts': ['pybozocrack = pybozocrack:main']},)
