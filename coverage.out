@@ -1,0 +1,26 @@
+mode: set
+go-bozocrack/pkg/cache/cache.go:19.48,27.16 3 1
+go-bozocrack/pkg/cache/cache.go:27.16,31.3 1 0
+go-bozocrack/pkg/cache/cache.go:32.2,32.19 1 1
+go-bozocrack/pkg/cache/cache.go:37.30,43.16 4 1
+go-bozocrack/pkg/cache/cache.go:43.16,44.25 1 1
+go-bozocrack/pkg/cache/cache.go:44.25,46.4 1 1
+go-bozocrack/pkg/cache/cache.go:47.3,47.85 1 0
+go-bozocrack/pkg/cache/cache.go:49.2,55.21 5 1
+go-bozocrack/pkg/cache/cache.go:55.21,59.22 4 1
+go-bozocrack/pkg/cache/cache.go:59.22,61.12 2 1
+go-bozocrack/pkg/cache/cache.go:63.3,66.36 3 1
+go-bozocrack/pkg/cache/cache.go:66.36,68.4 1 1
+go-bozocrack/pkg/cache/cache.go:68.9,70.4 1 1
+go-bozocrack/pkg/cache/cache.go:73.2,73.38 1 1
+go-bozocrack/pkg/cache/cache.go:73.38,75.3 1 0
+go-bozocrack/pkg/cache/cache.go:77.2,77.12 1 1
+go-bozocrack/pkg/cache/cache.go:81.49,86.2 4 1
+go-bozocrack/pkg/cache/cache.go:89.58,95.82 3 1
+go-bozocrack/pkg/cache/cache.go:95.82,97.3 1 1
+go-bozocrack/pkg/cache/cache.go:99.2,102.40 2 1
+go-bozocrack/pkg/cache/cache.go:107.67,109.16 2 1
+go-bozocrack/pkg/cache/cache.go:109.16,111.3 1 0
+go-bozocrack/pkg/cache/cache.go:112.2,115.51 3 1
+go-bozocrack/pkg/cache/cache.go:115.51,117.3 1 0
+go-bozocrack/pkg/cache/cache.go:118.2,118.12 1 1
