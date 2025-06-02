@@ -1,0 +1,7 @@
+This is a test file with some hashes.
+fcf1eed8596699624167416a1e7e122e (octopus)
+Another line with a hash: e10adc3949ba59abbe56e057f20f883e (123456)
+Invalid hash: gggggggggggggggggggggggggggggggg
+And one more valid hash: 098f6bcd4621d373cade4e832627b4f6 (test)
+Duplicate: e10adc3949ba59abbe56e057f20f883e
+FCF1EED8596699624167416A1E7E122E (uppercase octopus)
